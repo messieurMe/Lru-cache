@@ -20,7 +20,7 @@ class LruCache<K, V>(cacheSize: Int = 100) {
     fun put(key: K, value: V): Boolean {
         if (cachedValuesMap.contains(key)) {
             cachedValuesMap[key] = value
-            return true
+            return false
         }
 
         assert(cachedValuesMap.size <= cacheSize) { throwException(OVERFLOW) }
